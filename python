@@ -1,0 +1,35 @@
+python
+
+1107
+makejson.py 코드 해석
+
+main function을 따로 안 만들어줘도 됨.
+
+rt_file_name = rt_path+'/'+i.split(".png")[0]+".txt"     (i=file_list)
+: 이미지 파일 이름.png -> 이미지 파일 이름 -> 이미지 파일 이름.txt
+: path 앞에 추가
+
+저장된 rt: Rx Ry Rz tx ty tz
+
+한 줄 읽기 -> 띄어쓰기 대로 저장 -> rotation matrix (R) 만들기 -> t를 열로 붙이기 -> 0, 0, 0, 1 행으로 추가
+-> 열별로 저장 -> 2열, 3열 바꾸기 -> 행별로 저장 -> 2열 3열 바꾸기 ->
+
+* * * tx
+* * * ty
+* * * tz
+0 0 0 1
+
+euler -> rotmat
+cylindrical -> cartesian ??
+
+
+질문
+
+6: data = {"camera_angle_x": 0.6911112070083618,'frames':[]}
+0.6911112070083618 어디서 나온거?
+
+57: 'rotation':  0.031415926535897934,  # 0.012566370614359171
+0.031415926535897934 이것도.
+
+54:
+matrix sum 이유
